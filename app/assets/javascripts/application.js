@@ -13,5 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require twitter/bootstrap
+//= require_self
+
+console.log("hello zoo")
