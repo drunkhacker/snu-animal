@@ -1,5 +1,5 @@
 %h1 Hi
 - if user_signed_in?
-    %a{:href => destroy_user_session_path, :method => "delete"} Sign out
+    = link_to "Sign out", destroy_user_session_path, :method => :delete
 - else
-    %a{:href => login_path} Sign in with MYSNU
+    = link_to "Sign in with MYSNU", login_path
