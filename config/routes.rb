@@ -1,8 +1,10 @@
 SnuAnimal::Application.routes.draw do
-  devise_for :users#, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :posts
+  resources :posts do
+    resources :comments
+  end
   root 'main#index'
 
+  devise_for :users#, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get '/users/auth/mysnu/authorize' => 'users/omniauth_authorize#mysnu', :as => "login"
   get '/users/auth/mysnu/callback' => 'users/omniauth_callbacks#mysnu'
 

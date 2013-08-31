@@ -1,0 +1,23 @@
+%h3= @post.title
+%p
+  = @post.body
+
+%hr
+  %ul.list-group
+  - @comments.each do |comment|
+    %li.list-group-item
+      %img.img-circle.pull-left{:src => "#{comment.animal.image_url}"}
+      %h4.list-group-item-heading= comment.animal.name
+      %p.list-group-item-text= comment.body
+
+  - if @comments.empty?
+    %li.list-group-item No comments.
+
+  = form_for [@post, @comment], html: {class: "form-horizontal", role:"form", style:"margin-top:30px;"} do |f|
+    .form-group
+      .col-lg-2
+        %img.img-circle{src:"//placehold.it/75"}
+      .col-lg-10
+        = f.text_area :body, class: "form-control", rows: 3
+    = f.submit "Submit", class: "btn btn-primary pull-right"
+

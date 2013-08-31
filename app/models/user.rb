@@ -16,4 +16,7 @@ class User < ActiveRecord::Base
     end
     user
   end
+  def animal(post)
+    PostAnimal.where(:post_id => post.id, :user_id => self.id).first.animal
+  end
 end
