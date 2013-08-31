@@ -11,3 +11,18 @@
       %ul.nav.navbar-nav
         %li.active
           %a{:href=>"#"}Home
+      %ul.nav.navbar-nav.navbar-right
+        %li.dropdown
+          - if user_signed_in?
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Sign in as
+              = current_user.id
+              %b.caret
+            %ul.dropdown-menu
+              %li
+                = link_to "Settings", "#"
+              %li.divider
+              %li
+                = link_to "Sign out", destroy_user_session_path, :method => :delete
+          - else
+            = link_to "Sign in with MYSNU", login_path
