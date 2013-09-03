@@ -1,0 +1,6 @@
+%ul.list-group
+  - @posts.each do |post|
+    %li= post.title
+
+%a.btn.btn-primary{:href=>"#{new_post_path}"} Write
+

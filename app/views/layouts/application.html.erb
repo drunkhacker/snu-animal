@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SnuAnimal</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= csrf_meta_tags %>
+    <title>SNU Animals</title>
 
-<%= yield %>
+    <!-- Bootstrap -->
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 
-</body>
+    <!-- Favicons -->
+    <%= favicon_link_tag "favicon/apple-touch-icon-144-precomposed.png", :sizes => "144x144", :rel => "apple-touch-icon-precomposed", :type => "image/png" %>
+    <%= favicon_link_tag "favicon/apple-touch-icon-114-precomposed.png", :sizes => "114x114", :rel => "apple-touch-icon-precomposed", :type => "image/png" %>
+    <%= favicon_link_tag "favicon/apple-touch-icon-72-precomposed.png", :sizes => "72x72", :rel => "apple-touch-icon-precomposed", :type => "image/png" %>
+    <%= favicon_link_tag "favicon/apple-touch-icon-57-precomposed.png", :rel => "apple-touch-icon-precomposed", :type => "image/png" %>
+    <%= favicon_link_tag "favicon/favicon.png" %>
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <%= javascript_include_tag "application-ie", "data-turbolinks-track" => true %>
+    <![endif]-->
+  </head>
+  <body>
+    <%= render :partial => "layouts/nav" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
 </html>
