@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :authorized?, :only => [:new, :create, :show] 
   def index
     @posts = Post.order('created_at DESC').page params[:page]
   end
@@ -21,5 +22,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comments = @post.comments.page(params[:cpage])
     @comment = Comment.new
+  end
+
+  private 
+  def authorized?
+    unless user_signed_in?
+      flash[:error] = "Not signed in"
+      redirect_to login_path
+    end
   end
 end

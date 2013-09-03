@@ -1,6 +1,9 @@
-%ul.list-group
+.list-group
   - @posts.each do |post|
-    %li= post.title
+    %a.list-group-item{:href => "#{post_path(post)}"}
+      - unless post.comments.empty?
+        %span.badge= post.comments.count
+      = post.title
 
 %a.btn.btn-primary{:href=>"#{new_post_path}"} Write
 

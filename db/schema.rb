@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(version: 20130830181927) do
   end
 
   create_table "users", force: true do |t|
+    t.string   "password_hashed"
+    t.string   "email_hashed"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "", null: false

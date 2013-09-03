@@ -24,6 +24,9 @@
   </head>
   <body>
     <%= render :partial => "layouts/nav" %>
+    <% if flash[:error] -%>
+    <div class="alert alert-danger" style="margin-top:-20px"><%= flash[:error] %></div>
+    <% end -%>
     <div class="container">
       <%= yield %>
     </div>
