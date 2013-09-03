@@ -26,3 +26,5 @@
 //= require twitter/bootstrap/tab
 //= require twitter/bootstrap/transition
 //= require_self
+//= require_tree .
+//= require moment.min

@@ -5,14 +5,16 @@
   .panel-body
     %p
       = @post.body
+%a{:href => "#{posts_path}"}
+  %span.glyph-icon.glyphicon-list 목록
 
 %hr
-  %ul.list-group
-  - @comments.each do |comment|
-    = render :partial => "comments/comment", :locals => {:comment => comment}
+  %ul.list-group#comments
+    - @comments.each do |comment|
+      = render :partial => "comments/comment", :locals => {:comment => comment}
 
   - if @comments.empty?
-    %li.list-group-item No comments.
+    %li.list-group-item#no-comment No comments.
 
   = form_for [@post, @comment], remote: true, html: {class: "form-horizontal", role:"form", style:"margin-top:30px;"} do |f|
     .form-group
