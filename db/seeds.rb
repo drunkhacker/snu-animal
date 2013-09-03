@@ -10,5 +10,3 @@ File.readlines("./init_data/animals.txt").map {|l| l.gsub(/\n/, '')}.each do |an
   animal = Animal.new(:name => animal_name, :image_url => "http://cfile22.uf.tistory.com/image/174821464E5C807E1683DE")
   animal.save
 end
-
-

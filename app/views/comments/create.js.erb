@@ -1,0 +1,7 @@
+<% if @comment.persisted? %>
+  $("#no-comment").remove()
+  $("#comments").append('<%= escape_javascript(render :partial => "comments/comment", :locals => {:comment => @comment}) %>')
+  $("#comment_body").val('')
+<% else %>
+  alert('<%= @comment.errors.full_messages %>')
+<% end %>
