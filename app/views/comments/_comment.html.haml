@@ -1,0 +1,6 @@
+%li.comment.list-group-item.clearfix
+  .animal-profile.pull-left
+    %img.img-circle{:src => "/animal_pics/#{comment.post_animal.animal.name}.jpg"}
+    %small.animal-name.text-center= comment.post_animal.animal.name
+  %p.comment-body.clearfix.list-group-item-text= comment.body
+  %small.comment-time.text-muted.pull-right= comment.created_at.strftime("%Y.%m.%d %l:%M %P")

@@ -1,3 +1,32 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comment { 
+  &.list-group-item {
+    margin-bottom:35px;
+    margin-left:30px; 
+    margin-top:30px; 
+  }
+  .animal-profile {
+    display:block;
+    margin-left:-45px;
+    margin-top:-40px;
+    img {
+      height:70px;
+      width:70px;
+    }
+    .animal-name {
+      display:block;
+      background-color:white;
+      margin-bottom:-10px;
+    }
+  }
+
+  .comment-body {
+    margin-left:40px;
+  }
+
+  .comment-time { 
+    margin-bottom:-5px;
+  }
+}

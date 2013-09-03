@@ -1,14 +1,15 @@
-%h3= @post.title
-%p
-  = @post.body
+.panel.panel-default
+  .panel-heading
+    .panel-title= @post.title
+    %small.text-muted= @post.created_at.strftime("%Y.%m.%d %l:%M %P")
+  .panel-body
+    %p
+      = @post.body
 
 %hr
   %ul.list-group
   - @comments.each do |comment|
-    %li.list-group-item
-      %img.img-circle.pull-left{:style => "height:100px;widht:100px;", :src => "#{comment.post_animal.animal.image_url}"}
-      %h4.list-group-item-heading= comment.animal.name
-      %p.list-group-item-text= comment.body
+    = render :partial => "comments/comment", :locals => {:comment => comment}
 
   - if @comments.empty?
     %li.list-group-item No comments.

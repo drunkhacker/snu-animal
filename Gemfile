@@ -44,6 +44,12 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+group :development do
+  gem 'rb-fsevent'
+  gem 'guard-livereload'
+end
+
+
 gem 'thin'
 #gem 'mysql2'
 gem 'omniauth'
