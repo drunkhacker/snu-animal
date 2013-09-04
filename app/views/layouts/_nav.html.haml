@@ -9,11 +9,11 @@
       %a.navbar-brand{:href=>root_path} SNU Animal
     .navbar-collapse.collapse
       %ul.nav.navbar-nav
-        %li.active
+        %li{:class => ("active" if content_for?(:nav_home))}
           %a{:href=>root_path}Home
-        %li
+        %li{:class => ("active" if content_for?(:nav_post))}
           %a{:href=>posts_path}Post
-        %li
+        %li{:class => ("active" if content_for?(:nav_about))}
           %a{:href=>about_path}About
       %ul.nav.navbar-nav.navbar-right
         %li.dropdown
