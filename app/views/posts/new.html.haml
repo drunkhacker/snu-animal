@@ -1,6 +1,11 @@
-=form_for @post, url: posts_path, html: {role: "form"} do |f|
-  .form-group
-    =f.text_field :title, class: "form-control", placeholder: "Title"
-  .form-group
-    =f.text_area :body, rows:10, class:"form-control"
-  =f.submit "Create", class: "btn btn-primary"
+.row
+  =form_for @post, url: posts_path, html: {role: "form"} do |f|
+    .form-group
+      .col-lg-12
+        =f.text_field :title, class: "form-control", placeholder: "Title"
+    .form-group
+      .col-lg-12
+        =f.text_area :body, rows:10, class:"form-control"
+      .col-lg-12
+        %span.input-group-btn
+          =f.submit "Create", class: "btn btn-primary btn-block"
