@@ -1,9 +1,9 @@
 class CreatePostAnimals < ActiveRecord::Migration
   def change
     create_table :post_animals do |t|
-      t.integer :post_id
-      t.integer :user_id
-      t.integer :animal_id
+      t.belongs_to :post
+      t.belongs_to :user
+      t.belongs_to :animal
       t.timestamps
     end
   end

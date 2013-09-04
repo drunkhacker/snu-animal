@@ -11,9 +11,8 @@
       %ul.nav.navbar-nav
         %li.active
           %a{:href=>root_path}Home
-        - if user_signed_in?
-          %li
-            %a{:href=>posts_path}Post
+        %li
+          %a{:href=>posts_path}Post
         %li
           %a{:href=>about_path}About
       %ul.nav.navbar-nav.navbar-right

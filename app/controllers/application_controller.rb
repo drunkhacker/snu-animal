@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
   end
 
   def authorized?
-    redirect_to back unless user_signed_in?
+    unless user_signed_in?
+      flash[:error] = "Not signed in"
+      redirect_to login_path
+    end
   end
 end

@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     p = params[:post]
-    @post = Post.new(:title => p[:title], :body => p[:body])
+    @post = current_user.posts.new(:title => p[:title], :body => p[:body])
     if @post.save
       redirect_to post_path(@post)
     else
@@ -25,10 +25,5 @@ class PostsController < ApplicationController
   end
 
   private 
-  def authorized?
-    unless user_signed_in?
-      flash[:error] = "Not signed in"
-      redirect_to login_path
-    end
-  end
+  #def authorized? end # moved application_controller.rb
 end

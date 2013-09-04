@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
   #Relation
   belongs_to :post
-  belongs_to :author, class_name: "User"
+  belongs_to :author, class_name: "User", :inverse_of => :posts
 
   #Callback
   before_save :assign_animal
