@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def authorized?
     unless user_signed_in?
-      flash[:error] = "Not signed in"
+      #flash[:error] = "Not signed in" # deprecated because redirect_to login_path
       redirect_to login_path
     end
   end
