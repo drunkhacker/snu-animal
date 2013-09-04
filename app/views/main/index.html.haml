@@ -5,5 +5,8 @@
     %h1 #{@users.count} Users signed
     %p Fully encrypted information
 
-- @users.each do |user|
-  %p.text-center #{user.email}
+.well
+  %pre
+    = @users.map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
+
+
