@@ -3,6 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="서울대학교,와플스튜디오,wafflestudio,snu,animal,zoo" />
+    <meta name="description" content="서울대학교 동물놀이 서비스입니다." />
+    <meta name="author" content="Jaewha Han,Taekmin Kim" />
+    <meta name="publisher" content="wafflestudio" />
+    <meta property="og:title" content="서울대학교 동물놀이" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="http://zoo.snu.ac/animal_pics/%ED%98%B8%EB%9E%91%EB%82%98%EB%B9%84.jpg"/>
+    <meta property="og:url" content="http://zoo.snu.ac"/>
+    <meta property="og:description" content="서울대학교 동물놀이 서비스입니다." />
+    <meta property="fb:app_id" content=""/>
     <%= csrf_meta_tags %>
     <title>SNU Animals</title>
 
@@ -24,9 +34,11 @@
   </head>
   <body>
     <%= render :partial => "layouts/nav" %>
-    <% if flash[:error] -%>
-    <div class="alert alert-danger" style="margin-top:-20px"><%= flash[:error] %></div>
-    <% end -%>
+    <div id="flash-error">
+      <% if flash[:error] -%>
+        <%= render :partial => "layouts/alert_flash", :locals => {:msg => flash[:error]} %>
+      <% end -%>
+    </div>
     <div class="container">
       <%= yield %>
     </div>

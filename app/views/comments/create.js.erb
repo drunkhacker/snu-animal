@@ -2,6 +2,8 @@
   $("#no-comment").remove()
   $("#comments").append('<%= escape_javascript(render :partial => "comments/comment", :locals => {:comment => @comment}) %>')
   $("#comment_body").val('')
+  $("#flash-error").html('')
 <% else %>
-  alert('<%= @comment.errors.full_messages %>')
+  <% msg = @comment.errors.full_messages.map {|e| e.html_safe}.join(", ").to_s %>
+  $('#flash-error').html('<%= escape_javascript render :partial => "layouts/alert_flash", :locals => {:msg => msg} %>')
 <% end %>
