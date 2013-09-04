@@ -1,2 +1,9 @@
 - content_for :nav_home, true
-%h1 Hi
+
+.jumbotron
+  .container
+    %h1 #{@users.count} Users signed
+    %p Fully encrypted information
+
+- @users.each do |user|
+  %p.text-center #{user.email}
