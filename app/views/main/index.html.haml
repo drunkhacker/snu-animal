@@ -6,7 +6,5 @@
     %p Fully encrypted information
 
 .well
-  %pre
+  %pre{:style => "margin: 0px"}
     = @users.map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
-
-
