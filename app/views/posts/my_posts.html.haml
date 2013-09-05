@@ -1,0 +1,22 @@
+- content_for :nav_post, true
+%table.table.table-striped
+  %thead
+    %tr
+      %th.text-center #
+      %th 제목
+      %th 
+  %tbody
+  - @posts.each do |post|
+    %tr
+      %td.text-center= post.id
+      %td
+        %a{:href => "#{post_path(post)}"}= post.title
+        - unless post.comments.empty?
+          %span.badge{:style=>"margin-left:10px;"}= post.comments.count
+      %td= post.created_at.strftime("%Y.%m.%d %l:%M %P")
+
+.row
+  .col-lg-12
+    %a.btn.btn-primary.btn-block{:href=>"#{new_post_path}"} Write
+  .col-lg-12
+    = paginate @posts
