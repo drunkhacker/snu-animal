@@ -1,6 +1,6 @@
 SnuAnimal::Application.routes.draw do
   resources :posts do
-    resources :comments
+    resources :comments, :only => [:create, :show]
   end
   root 'main#index'
   get '/about' => 'main#about'
@@ -8,6 +8,8 @@ SnuAnimal::Application.routes.draw do
   devise_for :users#, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   get '/users/auth/mysnu/authorize' => 'users/omniauth_authorize#mysnu', :as => "login"
   get '/users/auth/mysnu/callback' => 'users/omniauth_callbacks#mysnu'
+
+  get '/stream/notification' => "stream#notification"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

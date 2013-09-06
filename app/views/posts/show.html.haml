@@ -1,3 +1,15 @@
+:javascript
+  $(document).ready(function() {
+    var source = new EventSource('/stream/notification?post_id=#{@post.id}'),
+      message;
+    source.addEventListener('comment', function (e) {
+      message = JSON.parse(e.data);
+      $.get("/posts/#{@post.id}/comments/" + message.id, function(data) {
+          console.log(data);
+          $('#comments').append(data);
+      });
+    });
+  });
 - content_for :nav_post, true
 .panel.panel-default
   .panel-heading

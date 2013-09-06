@@ -50,7 +50,6 @@ group :development do
 end
 
 
-gem 'thin'
 #gem 'mysql2'
 gem 'omniauth'
 gem 'therubyracer'
@@ -59,3 +58,8 @@ gem 'kaminari'
 gem 'haml'
 gem 'devise'
 gem 'nokogiri'
+
+#gem 'thin'
+gem 'puma'
+#gem 'rainbows'
+gem 'redis'
