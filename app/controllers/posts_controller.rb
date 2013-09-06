@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def my_posts
+    @posts = current_user.posts.order('created_at DESC').page params[:page]
+  end
+
   private 
   #def authorized? end # moved application_controller.rb
 end
