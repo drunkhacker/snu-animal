@@ -27,3 +27,8 @@
 //= require twitter/bootstrap/transition
 //= require moment.min
 //= require_self
+
+$(document).ready(function() {
+  $('.animal-badge-detail').popover({placement: "auto", trigger: "hover", container: "body"});
+  $('.animal-badge-closed').popover({placement: "auto", trigger: "hover", container: "body", content: "내가 누구게?"});
+})
