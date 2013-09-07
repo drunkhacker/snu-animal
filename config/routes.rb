@@ -9,7 +9,6 @@ SnuAnimal::Application.routes.draw do
   get '/users/auth/mysnu/authorize' => 'users/omniauth_authorize#mysnu', :as => "login"
   get '/users/auth/mysnu/callback' => 'users/omniauth_callbacks#mysnu'
 
-  get '/stream/notification' => "stream#notification"
   get '/my_posts' => 'posts#my_posts', :as => "my_posts"
 
   # The priority is based upon order of creation: first created -> highest priority.

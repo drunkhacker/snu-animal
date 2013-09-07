@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-// require turbolinks
+//= require turbolinks
 //= require twitter/bootstrap/affix
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/button

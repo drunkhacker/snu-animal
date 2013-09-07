@@ -10,8 +10,5 @@ class CommentsController < ApplicationController
     p = params[:comment]
     @comment = current_user.comments.new(:body => p[:body], :post_id => params[:post_id])
     @comment.save
-    #redis = Redis.new
-    #redis.publish("post.#{@comment.post.id}.comment", {:id => @comment.id}.to_json) if @comment.save
-    #redis.quit
   end
 end
