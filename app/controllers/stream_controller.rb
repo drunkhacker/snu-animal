@@ -18,6 +18,7 @@ class StreamController < ApplicationController
     # Client disconnected
     logger.info "Disconnected"
   ensure
+    logger.info "Nomally closed"
     redis.quit
     sse.close
   end

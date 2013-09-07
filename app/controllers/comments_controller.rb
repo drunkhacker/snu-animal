@@ -7,9 +7,11 @@ class CommentsController < ApplicationController
   end
 
   def create
-    response.headers['Content-Type'] = 'text/javascript'
     p = params[:comment]
     @comment = current_user.comments.new(:body => p[:body], :post_id => params[:post_id])
-    Redis.new.publish("post.#{@comment.post.id}.comment", @comment.to_json) if @comment.save
+    @comment.save
+    #redis = Redis.new
+    #redis.publish("post.#{@comment.post.id}.comment", {:id => @comment.id}.to_json) if @comment.save
+    #redis.quit
   end
 end

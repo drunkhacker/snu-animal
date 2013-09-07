@@ -4,12 +4,12 @@ SnuAnimal::Application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
-  config.cache_classes = false
-  config.preload_frameworks = true
-  config.allow_concurrency = true
+  config.cache_classes = true # for live streaming
+  config.preload_frameworks = true # for live streaming
+  config.allow_concurrency = true # for live streaming
 
   # Do not eager load code on boot.
-  config.eager_load = false
+  config.eager_load = true # for live streaming
 
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
