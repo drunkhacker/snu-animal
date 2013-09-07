@@ -1,4 +1,8 @@
-.animal-collection{:style => "margin-left:-15px; margin-right:-15px;"}
+.animal-collection
+  %hgroup.page-header
+    %h3 내가 모은 동물들 
+    %h5.text-muted 모든 동물들을 모아보세요
+  %div{:style => "margin-left:-15px; margin-right:-15px;"}
   - i = 0
   - (0...30).each do |indx|
     .animal-badge
@@ -8,7 +12,7 @@
         %img.animal-badge-image.animal-badge-border.img-circle{:src => "/animal_pics/#{name}.jpg"}
         - i+=1 
       - else
-        %img.animal-badge-image.img-circle{:src => "http://placehold.it/120"}
+        %img.animal-badge-image.animal-badge-border-gray.img-circle{:src => "/animal_pics/zoo-theme.jpg"}
       %p.animal-name.text-muted= name
 
 
