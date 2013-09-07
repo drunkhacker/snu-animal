@@ -9,8 +9,11 @@ SnuAnimal::Application.routes.draw do
   get '/users/auth/mysnu/authorize' => 'users/omniauth_authorize#mysnu', :as => "login"
   get '/users/auth/mysnu/callback' => 'users/omniauth_callbacks#mysnu'
 
-  get '/my_posts' => 'posts#my_posts', :as => "my_posts"
-  get '/my_animals' => "animals#collection", :as => "my_animals"
+  scope "/my" do
+    get '/setting' => 'users#setting', :as => "my_setting"
+    get '/posts' => 'posts#my_posts', :as => "my_posts"
+    get '/animals' => "animals#collection", :as => "my_animals"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

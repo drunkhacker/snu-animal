@@ -2,9 +2,18 @@
 
 .jumbotron
   .container
-    %h1 #{@users.count} Users signed
-    %p Fully encrypted information
+    %h1 단언컨대 동물원은 가장 안전한 공간입니다.
+    %p 이메일 이외에는 어떤 정보도 저장하지 않고 이메일은 암호화되어 저장됩니다.
 
 .well
-  %pre{:style => "margin: 0px"}
-    = @users.map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
+  %h3 #{@users.count}명 입장
+  .row
+    .col-md-4
+      %pre
+        = @users[0..@users.count / 3].map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
+    .col-md-4
+      %pre
+        = @users[@users.count / 3..(@users.count / 3) * 2].map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
+    .col-md-4
+      %pre
+        = @users[(@users.count / 3) * 2..@users.count].map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
