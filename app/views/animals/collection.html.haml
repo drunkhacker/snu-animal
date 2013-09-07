@@ -1,0 +1,15 @@
+.animal-collection{:style => "margin-left:-15px; margin-right:-15px;"}
+  - i = 0
+  - (0...30).each do |indx|
+    .animal-badge
+      - name = ""
+      - if @taken[indx]
+        - name = @collection[i].name
+        %img.animal-badge-image.animal-badge-border.img-circle{:src => "/animal_pics/#{name}.jpg"}
+        - i+=1 
+      - else
+        %img.animal-badge-image.img-circle{:src => "http://placehold.it/120"}
+      %p.animal-name.text-muted= name
+
+
+

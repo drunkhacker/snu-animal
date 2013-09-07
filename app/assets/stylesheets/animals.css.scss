@@ -1,0 +1,32 @@
+// Place all the styles related to the animals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.animal-badge {
+  float: left;
+  position:relative;
+  padding-left:15px;
+  padding-right:15px;
+  height:155px;
+  width:150px;
+  .animal-badge-image {
+    width:120px;
+    height:120px;
+    &.animal-badge-border { 
+      width:110px;
+      height:110px;
+    }
+  }
+
+  .animal-badge-border { 
+    box-shadow:
+      0 0 0 5px #F5DA81;
+  }
+  text-align:center;
+
+  .animal-name {
+    font-weight:bold;
+    margin-top:5px;
+  }
+}
+
