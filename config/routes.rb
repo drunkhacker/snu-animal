@@ -1,6 +1,6 @@
 SnuAnimal::Application.routes.draw do
   resources :posts do
-    resources :comments, :only => [:create, :show]
+    resources :comments, :only => [:create]
   end
   root 'main#index'
   get '/about' => 'main#about'
