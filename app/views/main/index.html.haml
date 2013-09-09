@@ -8,7 +8,8 @@
 .well
   %h3 #{@users.count}명 입장
   .row
-    - @users.each_slice((@users.count + 2) / 3).each do |users|
-      .col-md-4
-        %pre.text-center
-          = users.map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
+    - if !@users.empty?
+      - @users.each_slice((@users.count + 2) / 3).each do |users|
+        .col-md-4
+          %pre.text-center
+            = users.map { |user| "#{user.email[0..4]}...#{user.email[-15..-1]}"}.join("\n")
